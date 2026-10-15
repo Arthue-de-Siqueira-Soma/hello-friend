@@ -1,332 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#124b91">
-  <meta name="description" content="Pizzaria Fatia dos Sonhos em Florianópolis, na Barra da Lagoa. Consulte o cardápio de pizzas e fale com a equipe para fazer seu pedido.">
-  <meta property="og:title" content="Pizzaria Fatia dos Sonhos | Florianópolis">
-  <meta property="og:description" content="Conheça a Pizzaria Fatia dos Sonhos na Barra da Lagoa, Florianópolis. Consulte sabores e informações para pedir sua pizza.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2715%27 fill=%27%23124b91%27/%3E%3Cpath d=%27M16 14 Q34 7 49 14 L32 51 Z%27 fill=%27%23fff%27 stroke=%27%23fff%27 stroke-width=%272%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M16 14 Q33 20 49 14%27 fill=%27none%27 stroke=%27%23dce6f2%27 stroke-width=%273%27/%3E%3Ccircle cx=%2727%27 cy=%2727%27 r=%273%27 fill=%27%23124b91%27/%3E%3Ccircle cx=%2735%27 cy=%2736%27 r=%273%27 fill=%27%23124b91%27/%3E%3C/svg%3E">
-  <title>Pizzaria Fatia dos Sonhos em Florianópolis | Barra da Lagoa</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-  <style>
-    :root{--blue:#164b91;--blue-dark:#103566;--blue-light:#eaf3ff;--white:#fff;--ink:#17263c;--muted:#637187;--line:#e3eaf3;--shadow:0 18px 55px rgba(16,53,102,.12);--radius:22px}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:92px}
-    body{margin:0;font-family:'Montserrat',sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
-    img{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
-    .section{padding:92px 0}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:.76rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:24px;height:3px;border-radius:3px;background:currentColor}
-    h1,h2,h3,p{margin-top:0}
-    h1,h2,h3{line-height:1.13;letter-spacing:-.04em}
-    h2{font-size:clamp(2rem,4vw,3.2rem);margin:14px 0 16px;font-weight:900}
-    .section-intro{max-width:650px;color:var(--muted);margin-bottom:38px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border:2px solid transparent;border-radius:999px;background:var(--blue);color:#fff;font-size:.91rem;font-weight:900;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer}
-    .btn:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 12px 28px #164b912b}
-    .btn-outline{background:transparent;color:var(--blue);border-color:#b8cde8}
-    .btn-outline:hover{color:#fff;border-color:var(--blue)}
-    .btn svg{width:19px;height:19px;flex:none}
-    /* Navegação */
-    .navbar{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(255,255,255,.94);border-bottom:1px solid #e8eef6;backdrop-filter:blur(14px)}
-    .nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:11px;min-width:0}
-    .brand-mark{display:grid;place-items:center;width:46px;height:46px;flex:none;border-radius:15px;background:var(--blue);color:#fff}
-    .brand-mark svg{width:27px;height:27px}
-    .brand-name{display:block;font-size:.95rem;font-weight:900;letter-spacing:-.04em;line-height:1.1}
-    .brand-tag{display:block;color:var(--muted);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
-    .nav-links{display:flex;align-items:center;gap:27px;font-size:.82rem;font-weight:700;color:#43536b}
-    .nav-links a:not(.btn):hover{color:var(--blue)}
-    .nav-cta{padding:12px 17px;font-size:.8rem}
-    .menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;color:var(--blue);cursor:pointer}
-    .menu-toggle svg{width:23px;height:23px}
-    /* Hero */
-    .hero{padding:138px 0 78px;overflow:hidden;background:radial-gradient(circle at 83% 27%,#e4efff 0,transparent 32%),linear-gradient(180deg,#f8fbff 0%,#fff 100%)}
-    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:56px}
-    .hero-copy h1{font-size:clamp(2.8rem,5.6vw,5rem);margin:18px 0 22px;font-weight:900;max-width:650px}
-    .hero-copy h1 span{color:var(--blue)}
-    .hero-copy>p{max-width:550px;color:var(--muted);font-size:1.05rem;margin-bottom:29px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-    .hero-note{display:flex;align-items:center;gap:12px;margin-top:27px;color:var(--muted);font-size:.8rem}
-    .note-icon{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:50%;background:var(--blue-light);color:var(--blue)}
-    .note-icon svg{width:20px;height:20px}
-    .hero-visual{position:relative;min-height:470px}
-    .hero-photo{position:absolute;inset:12px 18px 20px 22px;overflow:hidden;border-radius:48% 48% 25px 25px;box-shadow:var(--shadow)}
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
-    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(7,28,57,.42))}
-    .floating-card{position:absolute;z-index:2;display:flex;align-items:center;gap:12px;background:#fff;padding:15px 18px;border:1px solid #e7eef8;border-radius:17px;box-shadow:var(--shadow)}
-    .floating-card.top{top:36px;left:0}
-    .floating-card.bottom{bottom:0;right:0}
-    .float-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:13px;background:var(--blue-light);color:var(--blue)}
-    .float-icon svg{width:23px;height:23px}
-    .float-title{display:block;font-size:.8rem;font-weight:900}
-    .float-sub{display:block;font-size:.68rem;color:var(--muted);margin-top:2px}
-    /* Serviços */
-    .services{background:#fff}
-    .section-heading{text-align:center}
-    .section-heading .section-intro{margin-inline:auto}
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .service-card{padding:30px;border:1px solid var(--line);border-radius:var(--radius);transition:transform .2s,box-shadow .2s}
-    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-    .service-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:var(--blue-light);color:var(--blue);margin-bottom:23px}
-    .service-icon svg{width:29px;height:29px}
-    .service-card h3{font-size:1.2rem;margin-bottom:10px;font-weight:900}
-    .service-card p{color:var(--muted);font-size:.9rem;margin:0}
-    /* Diferenciais */
-    .advantages{background:var(--blue-dark);color:#fff;position:relative;overflow:hidden}
-    .advantages:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff14;border-radius:50%;right:-160px;top:-180px;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff05}
-    .advantages .eyebrow{color:#a9d0ff}
-    .advantages .section-intro{color:#d0deef}
-    .advantage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;z-index:1}
-    .advantage{padding:23px 20px;border:1px solid #ffffff26;background:#ffffff09;border-radius:18px}
-    .advantage .service-icon{background:#ffffff14;color:#c8e0ff;width:49px;height:49px;border-radius:15px;margin-bottom:18px}
-    .advantage .service-icon svg{width:24px;height:24px}
-    .advantage h3{font-size:1rem;margin-bottom:9px}
-    .advantage p{font-size:.82rem;color:#d0deef;margin:0}
-    /* Sobre */
-    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:68px;align-items:center}
-    .about-image{position:relative;min-height:435px}
-    .about-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .about-stamp{position:absolute;right:-18px;bottom:24px;background:var(--blue);color:#fff;border-radius:18px;padding:20px 23px;max-width:195px;box-shadow:var(--shadow)}
-    .about-stamp strong{display:block;font-size:1.12rem;font-weight:900}
-    .about-stamp span{display:block;font-size:.75rem;margin-top:5px;color:#dbeaff}
-    .about-copy p{color:var(--muted)}
-    .about-points{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:25px 0 29px}
-    .about-point{display:flex;align-items:center;gap:9px;font-size:.83rem;font-weight:700}
-    .check{display:grid;place-items:center;width:23px;height:23px;flex:none;border-radius:50%;background:var(--blue-light);color:var(--blue)}
-    .check svg{width:14px;height:14px}
-    /* Localização */
-    .location{background:var(--blue-light)}
-    .location-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:stretch}
-    .location-info{padding:15px 0}
-    .info-row{display:flex;align-items:flex-start;gap:14px;margin:23px 0}
-    .info-row .service-icon{width:47px;height:47px;border-radius:14px;flex:none;margin:0}
-    .info-row .service-icon svg{width:23px;height:23px}
-    .info-row h3{font-size:.92rem;letter-spacing:0;margin:2px 0 5px}
-    .info-row p{font-size:.85rem;color:var(--muted);margin:0}
-    .map-card{overflow:hidden;border-radius:var(--radius);min-height:390px;background:#d8e7f8;box-shadow:var(--shadow)}
-    .map-card iframe{width:100%;height:100%;min-height:390px;border:0;display:block}
-    /* Chamada final */
-    .final-cta{padding:82px 0}
-    .cta-panel{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:48px;border-radius:28px;background:var(--blue);color:#fff}
-    .cta-panel:after{content:"";position:absolute;width:310px;height:310px;border:1px solid #ffffff2a;border-radius:50%;right:18%;top:-190px;box-shadow:0 0 0 38px #ffffff0c,0 0 0 76px #ffffff08}
-    .cta-copy{position:relative;z-index:1;max-width:650px}
-    .cta-copy h2{margin-top:0;margin-bottom:12px}
-    .cta-copy p{color:#dceaff;margin:0}
-    .cta-panel .btn{position:relative;z-index:1;background:#fff;color:var(--blue);white-space:nowrap}
-    .cta-panel .btn:hover{background:#eaf3ff}
-    /* Rodapé */
-    footer{background:#0c2547;color:#fff;padding:48px 0 22px}
-    .footer-main{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;padding-bottom:32px}
-    footer .brand-tag{color:#b6c8df}
-    .footer-description{max-width:340px;color:#b6c8df;font-size:.82rem;margin:17px 0 0}
-    .footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:.8rem;color:#dce7f5;font-weight:700}
-    .footer-links a:hover{color:#fff;text-decoration:underline}
-    .footer-bottom{border-top:1px solid #ffffff20;padding-top:20px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#a9bdd7;font-size:.72rem}
-    .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:900;width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:#20b965;color:#fff;box-shadow:0 10px 30px #08743c4d;transition:transform .2s}
-    .whatsapp-float:hover{transform:translateY(-4px) scale(1.04)}
-    .whatsapp-float svg{width:31px;height:31px}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media(max-width:950px){
-      .nav-links{gap:16px}.nav-links a:not(.btn){font-size:.76rem}
-      .hero-grid{gap:25px}.hero-visual{min-height:400px}
-      .advantage-grid{grid-template-columns:repeat(2,1fr)}
-      .about-grid{gap:38px}
-    }
-    @media(max-width:760px){
-      html{scroll-padding-top:75px}.container{width:min(100% - 32px,560px)}.section{padding:68px 0}
-      .nav-inner{height:72px}.brand-mark{width:41px;height:41px;border-radius:13px}.brand-name{font-size:.87rem}
-      .menu-toggle{display:grid;place-items:center}
-      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 22px 24px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 25px #123b7212;align-items:stretch;gap:0}
-      .nav-links.open{display:flex;flex-direction:column}
-      .nav-links a:not(.btn){padding:13px 0;font-size:.9rem;border-bottom:1px solid #edf1f7}
-      .nav-cta{margin-top:14px}
-      .hero{padding:112px 0 58px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy h1{font-size:clamp(2.65rem,12vw,4rem)}
-      .hero-copy>p{font-size:.97rem}.hero-visual{min-height:370px;margin:0 4px}
-      .hero-photo{inset:10px 12px 18px 16px}.floating-card.top{left:-5px;top:18px}.floating-card.bottom{right:-4px}
-      .service-grid,.review-grid{grid-template-columns:1fr}.service-card{padding:25px}
-      .advantage-grid{gap:12px}.advantage{padding:19px 15px}
-      .about-grid,.location-grid{grid-template-columns:1fr;gap:28px}.about-image{min-height:340px;margin-right:10px}
-      .about-stamp{right:-10px}.about-points{gap:12px}
-      .map-card,.map-card iframe{min-height:320px}
-      .cta-panel{padding:34px 25px;align-items:flex-start;flex-direction:column}.cta-panel h2{font-size:2.15rem}
-      .footer-main{flex-direction:column}.footer-links{gap:16px}
-      .whatsapp-float{width:56px;height:56px;right:15px;bottom:15px}
-    }
-    @media(max-width:390px){.brand-tag{font-size:.58rem}.hero-actions .btn{width:100%}.advantage-grid{grid-template-columns:1fr}.about-points{grid-template-columns:1fr}.floating-card{padding:12px}.float-title{font-size:.74rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-
-    /* Direção de arte: composição editorial, hierarquia tipográfica e ritmo */
-    :root{--blue:#124b91;--blue-dark:#0b2a52;--blue-light:#edf4fc;--ink:#10223b;--muted:#52657e;--line:#dce6f2;--shadow:0 24px 70px rgba(11,42,82,.15);--radius:24px}
-    body{font-size:15px} h1,h2,h3{letter-spacing:-.055em} h1,h2,h3{font-weight:900}
-    h2{font-size:clamp(2.35rem,4.7vw,3.8rem);line-height:1.02}
-    .section-intro{font-size:1rem;line-height:1.85;max-width:600px}
-    .hero{padding:154px 0 96px;background:linear-gradient(115deg,#f7faff 0%,#fff 58%,#e7f0fc 100%)}
-    .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,92px)}
-    .hero-copy{padding:14px 0 22px}.hero-copy h1{font-size:clamp(3.4rem,6.8vw,6.3rem);line-height:.98;max-width:690px;margin:0 0 27px}
-    .hero-copy h1 span{display:block;color:var(--blue)}.hero-copy>p{font-size:1.08rem;line-height:1.85;max-width:500px}
-    .hero-visual{min-height:560px}.hero-photo{inset:0 0 18px 30px;border-radius:46% 46% 24px 24px}.hero-photo img{transform:scale(1.04)}
-    .floating-card{border-radius:16px}.floating-card.top{left:-18px;top:56px}.floating-card.bottom{right:-20px;bottom:4px}
-    .section{padding:108px 0}.section-heading{text-align:left;max-width:780px;margin-bottom:44px}
-    .section-heading .section-intro{margin-left:0;margin-right:0}
-    .service-grid{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:auto auto;gap:18px;align-items:stretch}
-    .service-card{min-height:210px;padding:30px 32px;display:flex;flex-direction:column;align-items:flex-start}
-    .service-card:first-child{grid-row:span 2;min-height:100%;padding:38px;background:linear-gradient(145deg,#f0f6ff,#fff);border-color:#d7e5f7}
-    .service-card:first-child .service-icon{width:70px;height:70px}.service-card:first-child h3{font-size:clamp(1.6rem,2.7vw,2.25rem);max-width:300px}
-    .service-card:not(:first-child) .service-icon{width:46px;height:46px;border-radius:14px;margin-bottom:15px}
-    .service-card:not(:first-child) .service-icon svg{width:23px;height:23px}
-    .service-card h3{font-size:1.35rem}.service-card p{font-size:.91rem;line-height:1.8}
-    .advantages{background:var(--blue-dark)}.advantages h2{max-width:650px}
-    .advantage-grid{grid-template-columns:1.25fr .75fr 1fr;grid-template-rows:auto auto;gap:14px}
-    .advantage{min-height:195px;padding:26px}.advantage:first-child{grid-column:span 2;min-height:230px;background:#ffffff12}
-    .advantage:nth-child(2){grid-column:3;grid-row:span 2}.advantage:nth-child(3){grid-column:1;min-height:170px}.advantage:nth-child(4){grid-column:2;min-height:170px}
-    .advantage h3{font-size:1.15rem}.advantage:first-child h3{font-size:1.55rem}.advantage p{line-height:1.8}
-    .about-grid{grid-template-columns:1fr 1fr;gap:clamp(38px,7vw,100px)}.about-image{min-height:520px}
-    .about-image img{border-radius:24px}.about-copy h2{max-width:560px}.about-copy p{line-height:1.9;font-size:.97rem}
-    .location{background:#eaf2fc}.location-grid{grid-template-columns:.8fr 1.2fr;gap:60px}
-    .location-info h2{font-size:clamp(2.3rem,4vw,3.3rem)}.map-card{min-height:460px;border:8px solid #fff}
-    .map-card iframe{min-height:444px}.final-cta{padding:90px 0;background:#fff}
-    .cta-panel{padding:58px 56px;border-radius:28px;background:linear-gradient(120deg,#124b91,#0b2a52)}
-    .cta-copy h2{font-size:clamp(2.25rem,4vw,3.4rem);max-width:600px}.cta-copy p{font-size:1rem;line-height:1.8}
-    footer{background:#071d39}.whatsapp-float{width:64px;height:64px}
-    .reveal-image{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
-    .reveal-image.is-visible{opacity:1;transform:translateY(0) scale(1)}
-    @media(max-width:950px){
-      .hero-grid{gap:28px}.hero-copy h1{font-size:clamp(3rem,6.5vw,4.8rem)}.hero-visual{min-height:440px}
-      .service-grid{grid-template-columns:1fr 1fr}.service-card:first-child{grid-row:span 2}
-      .advantage-grid{grid-template-columns:1fr 1fr}.advantage:first-child{grid-column:span 1}.advantage:nth-child(2){grid-column:2;grid-row:span 2}.advantage:nth-child(3){grid-column:1}.advantage:nth-child(4){grid-column:1}
-      .location-grid{gap:30px}
-    }
-    @media(max-width:760px){
-      .section{padding:74px 0}.hero{padding:112px 0 62px}
-      .hero-grid{grid-template-columns:1fr;gap:28px}.hero-copy{padding:10px 0 0}.hero-copy h1{font-size:clamp(3.15rem,13vw,4.5rem);max-width:560px}
-      .hero-copy>p{font-size:1rem}.hero-visual{min-height:410px;margin:0 8px 0 0}.hero-photo{inset:0 10px 18px 16px}
-      .floating-card.top{left:-8px;top:20px}.floating-card.bottom{right:-5px;bottom:0}
-      .section-heading{margin-bottom:30px}.service-grid{grid-template-columns:1fr;grid-template-rows:auto}
-      .service-card:first-child{grid-row:auto;min-height:250px;padding:30px}.service-card{min-height:auto}
-      .advantage-grid{grid-template-columns:1fr 1fr}.advantage:first-child{grid-column:span 2;min-height:180px}
-      .advantage:nth-child(2){grid-column:span 2;grid-row:auto}.advantage:nth-child(3),.advantage:nth-child(4){grid-column:auto;min-height:185px}
-      .review-grid{grid-template-columns:1fr}.review,.review:last-child{grid-column:auto;min-height:220px}.review:nth-child(2){transform:none}.review-note{margin-top:22px}
-      .about-grid,.location-grid{grid-template-columns:1fr;gap:34px}.about-image{min-height:360px;margin-right:10px}
-      .map-card,.map-card iframe{min-height:330px}.map-card{border-width:5px}.cta-panel{padding:35px 25px}.final-cta{padding:64px 0}
-    }
-    @media(max-width:390px){
-      .hero-copy h1{font-size:3rem}.hero-visual{min-height:340px}.advantage-grid{grid-template-columns:1fr}
-      .advantage:first-child,.advantage:nth-child(2),.advantage:nth-child(3),.advantage:nth-child(4){grid-column:1;grid-row:auto;min-height:150px}
-    }
-    @media(prefers-reduced-motion:reduce){.reveal-image{opacity:1;transform:none;transition:none}}
-
-  
-    /* Ajustes finais para telas estreitas (incluindo 360px) */
-    html, body{width:100%;max-width:100%;overflow-x:clip}
-    img, iframe{max-width:100%}
-    .container{min-width:0}
-    .hero-copy h1, h2, h3, p, a, .brand{overflow-wrap:break-word}
-    .btn{min-height:48px}
-    .menu-toggle{min-width:44px;min-height:44px}
-    .footer-links a, .footer-bottom a{display:inline-flex;align-items:center;min-height:44px}
-    @media(max-width:760px){
-      .container{width:calc(100% - 32px);max-width:560px}
-      .section{padding:58px 0}
-      .nav-inner{gap:10px}
-      .brand{gap:8px}
-      .brand-mark{width:38px;height:38px}
-      .brand-name{font-size:.84rem}
-      .brand-tag{font-size:.56rem;letter-spacing:.045em}
-      .nav-links{max-height:calc(100dvh - 72px);overflow-y:auto}
-      .nav-links a:not(.btn){min-height:44px;display:flex;align-items:center;padding:10px 0}
-      .nav-cta{min-height:48px}
-      .hero{padding:102px 0 48px}
-      .hero-grid{gap:24px}
-      .hero-copy h1{font-size:clamp(2.25rem,10.2vw,3rem);line-height:1.04;letter-spacing:-.045em;margin:0 0 18px}
-      .hero-copy>p{font-size:1rem;line-height:1.7;margin-bottom:22px}
-      .hero-actions{gap:10px}
-      .hero-actions .btn{width:100%;white-space:normal;text-align:center;padding:13px 16px}
-      .hero-note{font-size:.88rem;line-height:1.5}
-      .hero-visual{min-height:320px;margin:0 8px 0 4px}
-      .hero-photo{inset:0 8px 14px 12px;border-radius:40% 40% 20px 20px}
-      .floating-card{max-width:calc(100% - 4px);gap:8px;padding:10px 12px}
-      .floating-card.top{left:-4px;top:14px}
-      .floating-card.bottom{right:-2px;bottom:0}
-      .float-icon{width:36px;height:36px;flex:none}
-      .float-title{font-size:.76rem}
-      .float-sub{font-size:.7rem}
-      h2,.location-info h2,.cta-copy h2{font-size:clamp(1.8rem,8.3vw,2.25rem);line-height:1.1;letter-spacing:-.04em}
-      .section-heading{margin-bottom:26px}
-      .section-intro{font-size:1rem;line-height:1.7;margin-bottom:26px}
-      .service-grid{grid-template-columns:minmax(0,1fr);gap:14px}
-      .service-card,.service-card:first-child{min-height:0;padding:23px}
-      .service-card:first-child .service-icon{width:54px;height:54px}
-      .service-card h3,.service-card:first-child h3{font-size:1.25rem;line-height:1.2}
-      .service-card p{font-size:.98rem;line-height:1.65}
-      .advantage-grid{grid-template-columns:minmax(0,1fr);gap:12px}
-      .advantage,.advantage:first-child,.advantage:nth-child(2),.advantage:nth-child(3),.advantage:nth-child(4){
-        grid-column:1;grid-row:auto;min-height:0;padding:21px
-      }
-      .advantage h3,.advantage:first-child h3{font-size:1.16rem}
-      .advantage p{font-size:.96rem;line-height:1.65}
-      .about-grid,.location-grid{grid-template-columns:minmax(0,1fr);gap:26px}
-      .about-image{min-height:290px;margin:0 8px 0 0}
-      .about-stamp{right:-5px;bottom:14px;max-width:180px;padding:15px}
-      .about-copy p{font-size:1rem;line-height:1.7}
-      .about-points{grid-template-columns:minmax(0,1fr);gap:8px;margin:20px 0 24px}
-      .about-point{font-size:.94rem;min-height:36px}
-      .info-row{gap:12px}
-      .info-row p{font-size:.96rem;line-height:1.65;overflow-wrap:anywhere}
-      .map-card{min-height:280px;border-width:4px}
-      .map-card iframe{min-height:280px}
-      .final-cta{padding:48px 0}
-      .cta-panel{padding:27px 20px;gap:20px;border-radius:22px}
-      .cta-copy p{font-size:1rem;line-height:1.7}
-      .cta-panel .btn{width:100%;white-space:normal;text-align:center;padding:13px 15px}
-      .footer-main{gap:20px}
-      .footer-links{gap:4px 12px}
-      .footer-links a{font-size:.9rem}
-      .footer-bottom{font-size:.82rem;line-height:1.6;gap:8px}
-      .whatsapp-float{width:52px;height:52px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));}
-      .whatsapp-float svg{width:26px;height:26px}
-      body{padding-bottom:env(safe-area-inset-bottom)}
-    }
-    @media(max-width:390px){
-      .brand-tag{font-size:.53rem}
-      .hero-copy h1{font-size:clamp(2.15rem,9.8vw,2.45rem)}
-      .hero-visual{min-height:295px}
-      .floating-card{padding:9px 10px}
-      .float-title{font-size:.72rem}
-      .float-sub{font-size:.66rem}
-      .service-card,.service-card:first-child{padding:20px}
-      .cta-panel{padding:24px 18px}
-    }
-    @media(prefers-reduced-motion:reduce){
-      .reveal-image{opacity:1;transform:none;transition:none}
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#124b91">
+<meta name="description" content="Pizzaria Fatia dos Sonhos em Florianópolis, na Barra da Lagoa. Consulte o cardápio de pizzas e fale com a equipe para fazer seu pedido.">
+<meta property="og:title" content="Pizzaria Fatia dos Sonhos | Florianópolis">
+<meta property="og:description" content="Conheça a Pizzaria Fatia dos Sonhos na Barra da Lagoa, Florianópolis. Consulte sabores e informações para pedir sua pizza.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2715%27 fill=%27%23124b91%27/%3E%3Cpath d=%27M16 14 Q34 7 49 14 L32 51 Z%27 fill=%27%23fff%27 stroke=%27%23fff%27 stroke-width=%272%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M16 14 Q33 20 49 14%27 fill=%27none%27 stroke=%27%23dce6f2%27 stroke-width=%273%27/%3E%3Ccircle cx=%2727%27 cy=%2727%27 r=%273%27 fill=%27%23124b91%27/%3E%3Ccircle cx=%2735%27 cy=%2736%27 r=%273%27 fill=%27%23124b91%27/%3E%3C/svg%3E">
+<title>Pizzaria Fatia dos Sonhos em Florianópolis | Barra da Lagoa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
+<header class="navbar">
     <div class="container nav-inner">
-      <a class="brand" href="#inicio" aria-label="Fatia dos Sonhos, início">
+      <a class="brand" href="index.html" aria-label="Fatia dos Sonhos, início">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="m4 4 16 0"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/><path d="M8 13 10 16"/></svg></span>
         <span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria | Barra da Lagoa</span></span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
-        <a href="#servicos">Ver sabores</a><a href="#diferenciais">Por que pedir</a><a href="#sobre">Sobre a pizzaria</a><a href="#localizacao">Como chegar</a>
+        <a href="index.html" aria-current="page">Início</a><a href="cardapio.html">Cardápio</a><a href="sobre.html">Sobre a pizzaria</a><a href="contato.html">Como chegar</a>
         <a class="btn nav-cta whatsapp-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2A10.1 10.1 0 0 1 12.1 1.6a10 10 0 0 1 7.1 2.9 10 10 0 0 1 2.9 7.1 10.1 10.1 0 0 1-10 10.1Zm5.5-7.5c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.5-1.5 9.3 9.3 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-.9-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a12.9 12.9 0 0 0 4.9 4.3c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4s-.3-.3-.6-.5Z"/></svg> Consultar sabores no WhatsApp</a>
       </nav>
     </div>
   </header>
-
-  <main>
-    <section class="hero" id="inicio">
+<main>
+<section class="hero home-hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
           
@@ -334,7 +38,7 @@
           <p>Na Fatia dos Sonhos, você pode consultar nossos sabores e escolher a pizza para o jantar, para reunir os amigos ou para aproveitar com a família. Estamos na Barra da Lagoa, em Florianópolis.</p>
           <div class="hero-actions">
             <a class="btn whatsapp-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2A10.1 10.1 0 0 1 12.1 1.6a10 10 0 0 1 7.1 2.9 10 10 0 0 1 2.9 7.1 10.1 10.1 0 0 1-10 10.1Z"/></svg> Consultar sabores pelo WhatsApp</a>
-            <a class="btn btn-outline" href="#servicos">Ver como chegar</a>
+            <a class="btn btn-outline" href="contato.html">Como chegar</a>
           </div>
           <div class="hero-note"><span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span>Escolha sua pizza e reúna todo mundo à mesa.</span></div>
         </div>
@@ -345,132 +49,17 @@
         </div>
       </div>
     </section>
-
-    <section class="section services" id="servicos">
-      <div class="container">
-        <div class="section-heading"><h2>Encontre o sabor que combina com sua fome</h2><p class="section-intro">Está pensando em uma pizza clássica ou quer experimentar uma combinação diferente? Fale com a gente para conferir os sabores, tamanhos e preços disponíveis hoje.</p></div>
-        <div class="service-grid">
-          <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="M4 4h16"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/></svg></div><h3>Pizzas clássicas</h3><p>Confira os sabores clássicos disponíveis e escolha o que combina com seu pedido.</p></article>
-          <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Experimente outros sabores</h3><p>Quer variar? Consulte as combinações disponíveis e descubra sua próxima pizza favorita.</p></article>
-          <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.4-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.6-8 11-8 11Z"/></svg></div><h3>Pizza para reunir todo mundo</h3><p>Escolha uma pizza para o jantar em família, para a noite com amigos ou para matar a fome.</p></article>
-        </div>
-        <div style="text-align:center;margin-top:32px"><a class="btn whatsapp-link" href="#" target="_blank" rel="noopener">Consultar cardápio pelo WhatsApp <span aria-hidden="true">→</span></a></div>
-      </div>
-    </section>
-
-    <section class="section advantages" id="diferenciais">
-      <div class="container">
-        <h2>Peça sua pizza sem ficar procurando informação.</h2><p class="section-intro">Chame nossa equipe, confira o cardápio e tire suas dúvidas antes de escolher. Veja como podemos ajudar você a fazer seu pedido.</p>
-        <div class="advantage-grid">
-          <article class="advantage"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.8 8.7 21 9.6 16.5 14l1.1 6.2L12 17.3l-5.6 2.9L7.5 14 3 9.6l6.2-.9L12 3Z"/></svg></div><h3>Escolha sua pizza</h3><p>Consulte os sabores disponíveis e escolha a pizza para sua próxima refeição.</p></article>
-          <article class="advantage"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg></div><h3>Fale direto com a equipe</h3><p>Pergunte sobre sabores, preços e opções de atendimento em uma conversa pelo WhatsApp.</p></article>
-          <article class="advantage"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 3l-4 4 4 4M4 17h9M10 13l4 4-4 4"/></svg></div><h3>Confira antes de pedir</h3><p>Consulte sabores, tamanhos, preços e disponibilidade antes de decidir.</p></article>
-          <article class="advantage"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Estamos na Barra da Lagoa</h3><p>Veja nosso endereço e fale com a equipe para confirmar as opções de atendimento.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sobre">
-      <div class="container about-grid">
-        <div class="about-image"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=700&q=68" alt="Pizza preparada para ser compartilhada" width="700" height="875" loading="lazy" decoding="async"><div class="about-stamp"><strong>Fatia dos Sonhos</strong><span>Uma boa pizza reúne pessoas.</span></div></div>
-        <div class="about-copy"><h2>Conheça a Fatia dos Sonhos na Barra da Lagoa.</h2><p>Somos a Pizzaria Fatia dos Sonhos, na Barra da Lagoa, em Florianópolis. Aqui você pode conhecer nossas opções, consultar o cardápio e conversar com nossa equipe antes de fazer seu pedido.</p><p>Vai pedir para o jantar ou reunir os amigos? Chame a gente para conferir os sabores e as opções disponíveis hoje.</p>
-          <div class="about-points"><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Converse com a equipe</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Consulte o cardápio</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Veja como chegar</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Peça informações pelo WhatsApp</div></div>
-          <a class="btn whatsapp-link" href="#" target="_blank" rel="noopener">Consultar sabores pelo WhatsApp <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section location" id="localizacao">
-      <div class="container location-grid">
-        <div class="location-info"><h2>Encontre a Fatia dos Sonhos na Barra da Lagoa.</h2><p class="section-intro">Estamos na Rua Altamiro Barcelos Dutra, 1573. Consulte pelo WhatsApp os horários e as opções de atendimento antes de vir ou fazer seu pedido.</p>
-          <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>Endereço</h3><p>R. Altamiro Barcelos Dutra, 1573<br>Barra da Lagoa, Florianópolis, SC<br>88061-308</p><a href="https://www.google.com/maps/search/?api=1&query=R.+Altamiro+Barcelos+Dutra%2C+1573%2C+Barra+da+Lagoa%2C+Florian%C3%B3polis+-+SC%2C+88061-308" target="_blank" rel="noopener" style="display:inline-block;color:var(--blue);font-size:.8rem;font-weight:900;margin-top:7px">Abrir rota no Google Maps ↗</a></div></div>
-          <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>Horário de funcionamento</h3><p>Consulte os dias e horários atualizados diretamente pelo WhatsApp.</p></div></div>
-          <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.9L7.7 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.9-.6l2.8.5a2 2 0 0 1 1.7 2.6Z"/></svg></div><div><h3>Contato</h3><p>Fale com a equipe para consultar o cardápio e saber como pedir.</p></div></div>
-        </div>
-        <div class="map-card"><iframe title="Mapa da Pizzaria Fatia dos Sonhos" src="https://maps.google.com/maps?q=R.%20Altamiro%20Barcelos%20Dutra%2C%201573%2C%20Barra%20da%20Lagoa%2C%20Florian%C3%B3polis%20-%20SC&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="container"><div class="cta-panel"><div class="cta-copy"><h2>Vamos escolher sua pizza de hoje?</h2><p>Chame a Fatia dos Sonhos no WhatsApp, consulte os sabores disponíveis e veja como fazer seu pedido.</p></div><a class="btn whatsapp-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2A10.1 10.1 0 0 1 12.1 1.6a10 10 0 0 1 7.1 2.9 10 10 0 0 1 2.9 7.1 10.1 10.1 0 0 1-10 10.1Z"/></svg> Consultar sabores no WhatsApp</a></div></div>
-    </section>
-  </main>
-
-  <footer>
+<section class="home-quick-links"><div class="container quick-link-row"><p>Na Barra da Lagoa, Florianópolis. Consulte sabores e informações antes de pedir.</p><a class="btn" href="cardapio.html">Conhecer o cardápio</a></div></section>
+</main>
+<footer>
     <div class="container">
       <div class="footer-main">
-        <div><a class="brand" href="#inicio"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="m4 4 16 0"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/></svg></span><span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria | Barra da Lagoa</span></span></a><p class="footer-description">Sua pizzaria na Barra da Lagoa, em Florianópolis.</p></div>
-        <nav class="footer-links" aria-label="Links do rodapé"><a href="#servicos">Ver sabores</a><a href="#diferenciais">Por que pedir</a><a href="#sobre">Sobre a pizzaria</a><a href="#localizacao">Como chegar</a><a class="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp</a></nav>
+        <div><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="m4 4 16 0"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/></svg></span><span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria | Barra da Lagoa</span></span></a><p class="footer-description">Sua pizzaria na Barra da Lagoa, em Florianópolis.</p></div>
+        <nav class="footer-links" aria-label="Links do rodapé"><a href="cardapio.html">Cardápio</a><a href="sobre.html">Sobre</a><a href="sobre.html">Sobre a pizzaria</a><a href="contato.html">Como chegar</a><a class="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp</a></nav>
       </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> Pizzaria Fatia dos Sonhos. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a></div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Pizzaria Fatia dos Sonhos. Todos os direitos reservados.</span><a href="index.html">Início</a></div>
     </div>
   </footer>
-
-  <a class="whatsapp-float whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="Chamar a Pizzaria Fatia dos Sonhos no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2A10.1 10.1 0 0 1 12.1 1.6a10 10 0 0 1 7.1 2.9 10 10 0 0 1 2.9 7.1 10.1 10.1 0 0 1-10 10.1Z"/></svg></a>
-
-  <script>
-    // IMPORTANTE: substitua pelo WhatsApp real da pizzaria, com código do Brasil + DDD + número.
-    // Número pendente de confirmação; os botões só serão ativados após o envio do contato correto.
-    const WHATSAPP_NUMBER = "";
-    const DEFAULT_MESSAGE = "Olá! Vim pelo site da Pizzaria Fatia dos Sonhos e gostaria de consultar o cardápio.";
-    document.querySelectorAll(".whatsapp-link").forEach(link => {
-      if (/^55\d{10,11}$/.test(WHATSAPP_NUMBER)) {
-        link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
-      } else {
-        link.href = "#";
-        link.addEventListener("click", event => {
-          event.preventDefault();
-          alert("O WhatsApp da pizzaria ainda precisa ser configurado no arquivo index.html.");
-        });
-      }
-    });
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const imagesToReveal = document.querySelectorAll(".hero-photo img, .about-image img, .map-card");
-    imagesToReveal.forEach(image => image.classList.add("reveal-image"));
-    if ("IntersectionObserver" in window) {
-      const imageObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            imageObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14 });
-      imagesToReveal.forEach(image => imageObserver.observe(image));
-    } else {
-      imagesToReveal.forEach(image => image.classList.add("is-visible"));
-    }
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
-    });
-    const closeMobileMenu = () => {
-      navLinks.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Abrir menu");
-    };
-    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMobileMenu));
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") closeMobileMenu();
-    });
-    document.addEventListener("click", event => {
-      if (navLinks.classList.contains("open") &&
-          !navLinks.contains(event.target) &&
-          !menuToggle.contains(event.target)) closeMobileMenu();
-    });
-    const floatingWhatsApp = document.querySelector(".whatsapp-float");
-    const footer = document.querySelector("footer");
-    if (floatingWhatsApp && footer && "IntersectionObserver" in window) {
-      const footerObserver = new IntersectionObserver(entries => {
-        floatingWhatsApp.style.opacity = entries[0].isIntersecting ? "0" : "1";
-        floatingWhatsApp.style.pointerEvents = entries[0].isIntersecting ? "none" : "auto";
-        floatingWhatsApp.setAttribute("aria-hidden", entries[0].isIntersecting ? "true" : "false");
-      }, { threshold: 0.05 });
-      footerObserver.observe(footer);
-    }
-  </script>
-</body>
-</html>
+<a class="whatsapp-float whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="Chamar a Pizzaria Fatia dos Sonhos no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 0 1-1.5-5.2A10.1 10.1 0 0 1 12.1 1.6a10 10 0 0 1 7.1 2.9 10 10 0 0 1 2.9 7.1 10.1 10.1 0 0 1-10 10.1Z"/></svg></a>
+<script src="script.js"></script>
+</body></html>
