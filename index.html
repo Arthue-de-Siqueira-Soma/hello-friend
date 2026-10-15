@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Pizzaria Forno & Brasa — pizzas artesanais, ingredientes selecionados e muito sabor. Peça online!">
+  <title>Forno & Brasa | Pizzaria Artesanal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Massa artesanal, ingredientes frescos e muito amor em cada fatia.</div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Forno e Brasa, início"><span class="brand-mark">F<span>&</span>B</span><span class="brand-name">FORNO <i>&</i> BRASA<small>PIZZARIA ARTESANAL</small></span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="navigation" id="navigation">
+      <a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#sobre">Nossa história</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="header-order" href="#cardapio">Peça agora <span>↗</span></a>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow"><span></span> FEITA COM TEMPO. SERVIDA COM PAIXÃO.</span>
+        <h1>Tem coisas que<br>merecem ser <em>artesanais.</em></h1>
+        <p>Massa de fermentação lenta, molho feito aqui e ingredientes que fazem toda a diferença. A sua próxima pizza favorita está a um clique.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#cardapio">Explorar cardápio <span>→</span></a><a class="text-link" href="#sobre">Conheça nossa história <span>↗</span></a></div>
+        <div class="hero-note"><span class="stars">★★★★★</span><span><strong>Sabor que conquista</strong><small>Preparada na hora, do nosso forno para você.</small></span></div>
+      </div>
+      <div class="hero-image" role="img" aria-label="Pizza artesanal recém-saída do forno">
+        <div class="image-label"><span>✳</span><span>ARTESANAL<br>DE VERDADE</span></div>
+        <div class="hero-caption"><span>01 / NOSSA ESPECIALIDADE</span><strong>Uma fatia de felicidade.</strong></div>
+      </div>
+      <div class="hero-index">EST. COM SABOR <span>•</span> FEITO COM CARINHO</div>
+    </section>
+    <section class="benefits" aria-label="Nossos diferenciais"><div><span class="benefit-icon">◷</span><span><strong>Massa de longa fermentação</strong><small>Leve, saborosa e preparada com tempo.</small></span></div><div><span class="benefit-icon">✳</span><span><strong>Ingredientes selecionados</strong><small>Qualidade em cada detalhe.</small></span></div><div><span class="benefit-icon">♨</span><span><strong>Assada na hora</strong><small>Quentinha, direto do nosso forno.</small></span></div></section>
+    <section class="menu-section section-wrap" id="cardapio">
+      <div class="section-heading"><div><span class="eyebrow">ESCOLHIDAS A DEDO</span><h2>As favoritas da casa<span>.</span></h2></div><p>Clássicas ou surpreendentes, todas têm algo em comum: são feitas para você querer mais uma fatia.</p></div>
+      <div class="filters" role="group" aria-label="Filtrar pizzas"><button class="filter active" data-filter="todas">Todas</button><button class="filter" data-filter="classicas">Clássicas</button><button class="filter" data-filter="especiais">Especiais</button><button class="filter" data-filter="doces">Doces</button></div>
+      <div class="pizza-grid" id="pizza-grid">
+        <article class="pizza-card" data-category="classicas"><div class="pizza-photo photo-margherita"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=85" alt="Pizza marguerita com manjericão" loading="lazy"><span class="pizza-tag">A queridinha</span><button class="add-button" data-pizza="Margherita" aria-label="Adicionar Margherita ao pedido">+</button></div><div class="pizza-info"><div><h3>Margherita</h3><p>Molho da casa, muçarela, tomate e manjericão fresco.</p></div><strong class="price">R$ 39,90</strong></div></article>
+        <article class="pizza-card" data-category="classicas"><div class="pizza-photo"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=85" alt="Pizza de pepperoni" loading="lazy"><button class="add-button" data-pizza="Pepperoni" aria-label="Adicionar Pepperoni ao pedido">+</button></div><div class="pizza-info"><div><h3>Pepperoni</h3><p>Muçarela cremosa, pepperoni e nosso molho especial.</p></div><strong class="price">R$ 44,90</strong></div></article>
+        <article class="pizza-card" data-category="especiais"><div class="pizza-photo"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=85" alt="Pizza artesanal especial" loading="lazy"><span class="pizza-tag">Especial da casa</span><button class="add-button" data-pizza="Forno & Brasa" aria-label="Adicionar Forno e Brasa ao pedido">+</button></div><div class="pizza-info"><div><h3>Forno & Brasa</h3><p>Calabresa artesanal, cebola roxa, muçarela e toque de orégano.</p></div><strong class="price">R$ 49,90</strong></div></article>
+        <article class="pizza-card" data-category="especiais"><div class="pizza-photo"><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=85" alt="Pizza de queijo e ingredientes frescos" loading="lazy"><button class="add-button" data-pizza="Quatro Queijos" aria-label="Adicionar Quatro Queijos ao pedido">+</button></div><div class="pizza-info"><div><h3>Quatro Queijos</h3><p>Muçarela, parmesão, provolone e gorgonzola.</p></div><strong class="price">R$ 47,90</strong></div></article>
+        <article class="pizza-card" data-category="doces"><div class="pizza-photo"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=85" alt="Pizza doce de chocolate" loading="lazy"><span class="pizza-tag">Para adoçar</span><button class="add-button" data-pizza="Chocolate" aria-label="Adicionar Chocolate ao pedido">+</button></div><div class="pizza-info"><div><h3>Chocolate</h3><p>Chocolate cremoso e granulado sobre massa quentinha.</p></div><strong class="price">R$ 35,90</strong></div></article>
+        <article class="pizza-card" data-category="classicas"><div class="pizza-photo"><img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=85" alt="Pizza de calabresa" loading="lazy"><button class="add-button" data-pizza="Calabresa" aria-label="Adicionar Calabresa ao pedido">+</button></div><div class="pizza-info"><div><h3>Calabresa</h3><p>Calabresa fatiada, cebola, muçarela e orégano.</p></div><strong class="price">R$ 42,90</strong></div></article>
+      </div>
+      <div class="menu-bottom"><span>Preparada na hora, do jeitinho que você gosta.</span><button class="button button-dark" id="view-order">Ver meu pedido <span>→</span> <b id="cart-count">0</b></button></div>
+    </section>
+    <section class="story-section" id="sobre"><div class="story-image" role="img" aria-label="Pizza artesanal preparada com cuidado"></div><div class="story-copy"><span class="eyebrow">MAIS QUE UMA PIZZA</span><h2>O segredo está<br>no que não<br>tem <em>pressa.</em></h2><p>Acreditamos que comida boa começa antes de o forno acender. Está na massa descansando, no ingrediente escolhido com cuidado e na alegria de reunir pessoas ao redor da mesa.</p><p>É esse cuidado que colocamos em cada pizza, todos os dias.</p><a class="text-link" href="#cardapio">Experimente você também <span>→</span></a></div></section>
+    <section class="cta-section"><span class="eyebrow">A MESA ESTÁ POSTA</span><h2>Hoje combina com pizza.</h2><p>Escolha a sua favorita e deixe o resto com a gente.</p><a href="#cardapio" class="button button-primary">Escolher minha pizza <span>→</span></a></section>
+  </main>
+  <footer id="contato"><div class="footer-top"><a class="brand brand-footer" href="#inicio"><span class="brand-mark">F<span>&</span>B</span><span class="brand-name">FORNO <i>&</i> BRASA<small>PIZZARIA ARTESANAL</small></span></a><p>Feita com tempo. Servida com paixão.</p><div class="footer-contact"><strong>Faça seu pedido</strong><a id="footer-whatsapp" href="#cardapio">WhatsApp: configurar número</a><span>Atendimento: consulte nossos horários</span></div></div><div class="footer-bottom"><span>© <span id="year"></span> Forno & Brasa. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+  <dialog id="order-dialog" class="order-dialog"><div class="dialog-head"><div><span class="eyebrow">SUA ESCOLHA</span><h2>Seu pedido</h2></div><button id="close-order" class="close-dialog" aria-label="Fechar">×</button></div><div id="order-items" class="order-items"><p class="empty-cart">Seu pedido ainda está vazio. Escolha uma pizza do cardápio!</p></div><div class="order-total"><span>Total</span><strong id="order-total">R$ 0,00</strong></div><label class="customer-label" for="customer-name">Seu nome</label><input id="customer-name" class="customer-input" placeholder="Como podemos te chamar?"><label class="customer-label" for="customer-address">Endereço de entrega</label><textarea id="customer-address" class="customer-input" rows="2" placeholder="Rua, número, bairro e complemento"></textarea><button id="checkout" class="button button-primary checkout-button">Finalizar pelo WhatsApp ↗</button><small class="dialog-hint">O pedido será enviado para confirmação pelo WhatsApp.</small></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
