@@ -340,3 +340,12 @@
  .quick-link-row{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){.reveal-image{opacity:1;transform:none;transition:none}}
+
+/* Conversao e legibilidade - atualizado */
+.home-hero{background-image:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.72) 55%,rgba(0,0,0,.42)),linear-gradient(0deg,rgba(0,0,0,.4),rgba(0,0,0,.16)),url('https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=2000&q=82')}
+.home-hero .hero-copy h1 span{color:#f5c451}
+.home-hero .hero-copy>p{color:#fff;max-width:620px;line-height:1.8;text-shadow:0 2px 12px #000}
+.navbar .brand-name,.navbar .brand-tag{color:#fff;text-shadow:0 1px 8px #0006}
+.navbar .brand-tag{font-weight:700;letter-spacing:.07em}
+.home-hero .btn:not(.btn-outline){background:#f5c451;color:#171717;border:1px solid #f5c451;font-weight:900}
+.home-hero .btn:not(.btn-outline):hover{background:#ffda78;transform:translateY(-2px)}
