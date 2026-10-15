@@ -200,7 +200,7 @@
           <div class="hero-note"><span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span>Um bom motivo para reunir todo mundo à mesa.</span></div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo"><img src="https://images.unsplash.com/photo-157 pizza?auto=format&fit=crop&w=1200&q=85" alt="Pizza artesanal recém-assada com queijo derretido" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=85'"></div>
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=85" alt="Pizza artesanal recém-assada com queijo derretido" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=85'"></div>
           <div class="floating-card top"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.8 8.7 21 9.6 16.5 14l1.1 6.2L12 17.3l-5.6 2.9L7.5 14 3 9.6l6.2-.9L12 3Z"/></svg></span><span><span class="float-title">Feita para compartilhar</span><span class="float-sub">Sabor em cada pedaço</span></span></div>
           <div class="floating-card bottom"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span><span class="float-title">Barra da Lagoa</span><span class="float-sub">Florianópolis · SC</span></span></div>
         </div>
@@ -284,10 +284,19 @@
   <script>
     // IMPORTANTE: substitua pelo WhatsApp real da pizzaria, com código do Brasil + DDD + número.
     // Exemplo de formato: 5548999999999 (somente números, sem +, espaços ou traços).
-    const WHATSAPP_NUMBER = "5548999999999";
+    // Deixe vazio até ter o número real; os botões avisam que falta configurar.
+    const WHATSAPP_NUMBER = "";
     const DEFAULT_MESSAGE = "Olá! Vim pelo site da Pizzaria Fatia dos Sonhos e gostaria de consultar o cardápio.";
     document.querySelectorAll(".whatsapp-link").forEach(link => {
-      link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
+      if (/^55\\d{10,11}$/.test(WHATSAPP_NUMBER)) {
+        link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
+      } else {
+        link.href = "#";
+        link.addEventListener("click", event => {
+          event.preventDefault();
+          alert("O WhatsApp da pizzaria ainda precisa ser configurado no arquivo index.html.");
+        });
+      }
     });
     document.getElementById("year").textContent = new Date().getFullYear();
     const menuToggle = document.getElementById("menuToggle");
