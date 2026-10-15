@@ -534,3 +534,28 @@ footer .brand-tag{color:#b8a583}
  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
  .reveal-image{opacity:1;transform:none}
 }
+
+/* Final polish: readable texture layer, matching call-to-action surfaces */
+body{background-color:#101413;background-image:radial-gradient(ellipse at 12% 14%,rgba(30,73,54,.12),transparent 42%),linear-gradient(180deg,#101413,#0d1110);background-attachment:fixed}
+body:before{display:none}
+.trust-strip{background:#0b100f}
+.featured-empty .btn{background:var(--vermilion);color:#fff;border-color:var(--aged-gold)}
+.home-quick-links .btn{background:transparent;border-color:var(--aged-gold);color:#f0d8a7}
+.home-quick-links .btn:hover{background:var(--forest);color:#fff}
+footer .brand-name{color:#f7f1e4}
+.contact-card a:not(.btn):hover{color:#fff0c8;text-decoration:underline;text-underline-offset:4px}
+.menu-panel .menu-actions .btn-outline{color:#e9e1cf}
+@media(max-width:760px){
+ .nav-inner{gap:10px}
+ .brand-name{font-size:.91rem}
+ .brand-tag{font-size:.56rem}
+ .home-hero .hero-actions .btn{width:100%;white-space:normal;text-align:center}
+ .featured-empty{gap:18px}
+}
+@media(max-width:390px){
+ .container{width:calc(100% - 30px)}
+ .home-hero .hero-copy h1{font-size:clamp(2.35rem,10.7vw,3rem)}
+ .brand{gap:8px}
+ .brand-name{font-size:.81rem}
+ .brand-tag{letter-spacing:.08em;font-size:.5rem}
+}
