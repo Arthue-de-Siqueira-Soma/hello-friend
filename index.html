@@ -237,6 +237,91 @@
     }
     @media(prefers-reduced-motion:reduce){.reveal-image{opacity:1;transform:none;transition:none}}
 
+  
+    /* Ajustes finais para telas estreitas (incluindo 360px) */
+    html, body{width:100%;max-width:100%;overflow-x:clip}
+    img, iframe{max-width:100%}
+    .container{min-width:0}
+    .hero-copy h1, h2, h3, p, a, .brand{overflow-wrap:break-word}
+    .btn{min-height:48px}
+    .menu-toggle{min-width:44px;min-height:44px}
+    .footer-links a, .footer-bottom a{display:inline-flex;align-items:center;min-height:44px}
+    @media(max-width:760px){
+      .container{width:calc(100% - 32px);max-width:560px}
+      .section{padding:58px 0}
+      .nav-inner{gap:10px}
+      .brand{gap:8px}
+      .brand-mark{width:38px;height:38px}
+      .brand-name{font-size:.84rem}
+      .brand-tag{font-size:.56rem;letter-spacing:.045em}
+      .nav-links{max-height:calc(100dvh - 72px);overflow-y:auto}
+      .nav-links a:not(.btn){min-height:44px;display:flex;align-items:center;padding:10px 0}
+      .nav-cta{min-height:48px}
+      .hero{padding:102px 0 48px}
+      .hero-grid{gap:24px}
+      .hero-copy h1{font-size:clamp(2.25rem,10.2vw,3rem);line-height:1.04;letter-spacing:-.045em;margin:0 0 18px}
+      .hero-copy>p{font-size:1rem;line-height:1.7;margin-bottom:22px}
+      .hero-actions{gap:10px}
+      .hero-actions .btn{width:100%;white-space:normal;text-align:center;padding:13px 16px}
+      .hero-note{font-size:.88rem;line-height:1.5}
+      .hero-visual{min-height:320px;margin:0 8px 0 4px}
+      .hero-photo{inset:0 8px 14px 12px;border-radius:40% 40% 20px 20px}
+      .floating-card{max-width:calc(100% - 4px);gap:8px;padding:10px 12px}
+      .floating-card.top{left:-4px;top:14px}
+      .floating-card.bottom{right:-2px;bottom:0}
+      .float-icon{width:36px;height:36px;flex:none}
+      .float-title{font-size:.76rem}
+      .float-sub{font-size:.7rem}
+      h2,.location-info h2,.cta-copy h2{font-size:clamp(1.8rem,8.3vw,2.25rem);line-height:1.1;letter-spacing:-.04em}
+      .section-heading{margin-bottom:26px}
+      .section-intro{font-size:1rem;line-height:1.7;margin-bottom:26px}
+      .service-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+      .service-card,.service-card:first-child{min-height:0;padding:23px}
+      .service-card:first-child .service-icon{width:54px;height:54px}
+      .service-card h3,.service-card:first-child h3{font-size:1.25rem;line-height:1.2}
+      .service-card p{font-size:.98rem;line-height:1.65}
+      .advantage-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+      .advantage,.advantage:first-child,.advantage:nth-child(2),.advantage:nth-child(3),.advantage:nth-child(4){
+        grid-column:1;grid-row:auto;min-height:0;padding:21px
+      }
+      .advantage h3,.advantage:first-child h3{font-size:1.16rem}
+      .advantage p{font-size:.96rem;line-height:1.65}
+      .about-grid,.location-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+      .about-image{min-height:290px;margin:0 8px 0 0}
+      .about-stamp{right:-5px;bottom:14px;max-width:180px;padding:15px}
+      .about-copy p{font-size:1rem;line-height:1.7}
+      .about-points{grid-template-columns:minmax(0,1fr);gap:8px;margin:20px 0 24px}
+      .about-point{font-size:.94rem;min-height:36px}
+      .info-row{gap:12px}
+      .info-row p{font-size:.96rem;line-height:1.65;overflow-wrap:anywhere}
+      .map-card{min-height:280px;border-width:4px}
+      .map-card iframe{min-height:280px}
+      .final-cta{padding:48px 0}
+      .cta-panel{padding:27px 20px;gap:20px;border-radius:22px}
+      .cta-copy p{font-size:1rem;line-height:1.7}
+      .cta-panel .btn{width:100%;white-space:normal;text-align:center;padding:13px 15px}
+      .footer-main{gap:20px}
+      .footer-links{gap:4px 12px}
+      .footer-links a{font-size:.9rem}
+      .footer-bottom{font-size:.82rem;line-height:1.6;gap:8px}
+      .whatsapp-float{width:52px;height:52px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));}
+      .whatsapp-float svg{width:26px;height:26px}
+      body{padding-bottom:env(safe-area-inset-bottom)}
+    }
+    @media(max-width:390px){
+      .brand-tag{font-size:.53rem}
+      .hero-copy h1{font-size:clamp(2.15rem,9.8vw,2.45rem)}
+      .hero-visual{min-height:295px}
+      .floating-card{padding:9px 10px}
+      .float-title{font-size:.72rem}
+      .float-sub{font-size:.66rem}
+      .service-card,.service-card:first-child{padding:20px}
+      .cta-panel{padding:24px 18px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .reveal-image{opacity:1;transform:none;transition:none}
+    }
+
   </style>
   <!-- GitHub Pages redeploy -->
 </head>
@@ -269,7 +354,7 @@
           <div class="hero-note"><span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span>Escolha sua pizza e reúna todo mundo à mesa.</span></div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=85" alt="Pizza artesanal recém-assada com queijo derretido" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=85'"></div>
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=75" alt="Pizza artesanal recém-assada com queijo derretido" fetchpriority="high" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=75'"></div>
           <div class="floating-card top"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.8 8.7 21 9.6 16.5 14l1.1 6.2L12 17.3l-5.6 2.9L7.5 14 3 9.6l6.2-.9L12 3Z"/></svg></span><span><span class="float-title">Pizza para compartilhar</span><span class="float-sub">Escolha para dividir</span></span></div>
           <div class="floating-card bottom"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span><span class="float-title">Barra da Lagoa</span><span class="float-sub">Florianópolis · SC</span></span></div>
         </div>
@@ -302,7 +387,7 @@
 
     <section class="section" id="sobre">
       <div class="container about-grid">
-        <div class="about-image"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1000&q=85" alt="Pizza preparada para ser compartilhada" loading="lazy"><div class="about-stamp"><strong>Fatia dos Sonhos</strong><span>Uma boa pizza reúne pessoas.</span></div></div>
+        <div class="about-image"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=75" alt="Pizza preparada para ser compartilhada" loading="lazy" decoding="async"><div class="about-stamp"><strong>Fatia dos Sonhos</strong><span>Uma boa pizza reúne pessoas.</span></div></div>
         <div class="about-copy"><h2>Conheça a Fatia dos Sonhos na Barra da Lagoa.</h2><p>Somos a Pizzaria Fatia dos Sonhos, na Barra da Lagoa, em Florianópolis. Aqui você pode conhecer nossas opções, consultar o cardápio e conversar com nossa equipe antes de fazer seu pedido.</p><p>Vai pedir para o jantar ou reunir os amigos? Chame a gente para conferir os sabores e as opções disponíveis hoje.</p>
           <div class="about-points"><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Converse com a equipe</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Consulte o cardápio</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Veja como chegar</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Peça informações pelo WhatsApp</div></div>
           <a class="btn whatsapp-link" href="#" target="_blank" rel="noopener">Consultar sabores pelo WhatsApp <span aria-hidden="true">→</span></a>
@@ -378,11 +463,30 @@
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
     });
-    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+    const closeMobileMenu = () => {
       navLinks.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.setAttribute("aria-label", "Abrir menu");
-    }));
+    };
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMobileMenu));
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeMobileMenu();
+    });
+    document.addEventListener("click", event => {
+      if (navLinks.classList.contains("open") &&
+          !navLinks.contains(event.target) &&
+          !menuToggle.contains(event.target)) closeMobileMenu();
+    });
+    const floatingWhatsApp = document.querySelector(".whatsapp-float");
+    const footer = document.querySelector("footer");
+    if (floatingWhatsApp && footer && "IntersectionObserver" in window) {
+      const footerObserver = new IntersectionObserver(entries => {
+        floatingWhatsApp.style.opacity = entries[0].isIntersecting ? "0" : "1";
+        floatingWhatsApp.style.pointerEvents = entries[0].isIntersecting ? "none" : "auto";
+        floatingWhatsApp.setAttribute("aria-hidden", entries[0].isIntersecting ? "true" : "false");
+      }, { threshold: 0.05 });
+      footerObserver.observe(footer);
+    }
   </script>
 </body>
 </html>
