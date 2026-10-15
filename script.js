@@ -2,7 +2,7 @@
     // IMPORTANTE: substitua pelo WhatsApp real da pizzaria, com código do Brasil + DDD + número.
     // Número pendente de confirmação; os botões só serão ativados após o envio do contato correto.
     const WHATSAPP_NUMBER = "";
-    const DEFAULT_MESSAGE = "Olá! Vim pelo site da Pizzaria Fatia dos Sonhos e gostaria de consultar o cardápio.";
+    const DEFAULT_MESSAGE = "Olá! Vim pelo site da Pizzaria Fatia dos Sonhos e gostaria de fazer um pedido.";
     document.querySelectorAll(".whatsapp-link").forEach(link => {
       if (/^55\d{10,11}$/.test(WHATSAPP_NUMBER)) {
         link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
