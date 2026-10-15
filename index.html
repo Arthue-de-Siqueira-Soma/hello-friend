@@ -288,7 +288,7 @@
     const WHATSAPP_NUMBER = "";
     const DEFAULT_MESSAGE = "Olá! Vim pelo site da Pizzaria Fatia dos Sonhos e gostaria de consultar o cardápio.";
     document.querySelectorAll(".whatsapp-link").forEach(link => {
-      if (/^55\\d{10,11}$/.test(WHATSAPP_NUMBER)) {
+      if (/^55\d{10,11}$/.test(WHATSAPP_NUMBER)) {
         link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
       } else {
         link.href = "#";
