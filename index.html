@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#123b72">
-  <meta name="description" content="Pizzaria Fatia dos Sonhos, na Barra da Lagoa, Florianópolis. Conheça nossas pizzas e faça seu pedido pelo WhatsApp.">
-  <title>Pizzaria Fatia dos Sonhos | Barra da Lagoa</title>
+  <meta name="description" content="Pizzaria Fatia dos Sonhos em Florianópolis, na Barra da Lagoa. Consulte o cardápio de pizzas e fale com a equipe para fazer seu pedido.">
+  <meta property="og:title" content="Pizzaria Fatia dos Sonhos | Florianópolis">
+  <meta property="og:description" content="Conheça a Pizzaria Fatia dos Sonhos na Barra da Lagoa, Florianópolis. Consulte sabores e informações para pedir sua pizza.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2715%27 fill=%27%23124b91%27/%3E%3Cpath d=%27M16 14 Q34 7 49 14 L32 51 Z%27 fill=%27%23fff%27 stroke=%27%23fff%27 stroke-width=%272%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M16 14 Q33 20 49 14%27 fill=%27none%27 stroke=%27%23dce6f2%27 stroke-width=%273%27/%3E%3Ccircle cx=%2727%27 cy=%2727%27 r=%273%27 fill=%27%23124b91%27/%3E%3Ccircle cx=%2735%27 cy=%2736%27 r=%273%27 fill=%27%23124b91%27/%3E%3C/svg%3E">
+  <title>Pizzaria Fatia dos Sonhos em Florianópolis | Barra da Lagoa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
@@ -86,17 +90,6 @@
     .advantage .service-icon svg{width:24px;height:24px}
     .advantage h3{font-size:1rem;margin-bottom:9px}
     .advantage p{font-size:.82rem;color:#d0deef;margin:0}
-    /* Depoimentos */
-    .testimonials{background:#f7faff}
-    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .review{padding:27px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
-    .stars{color:#e5a326;letter-spacing:3px;font-size:1.05rem;margin-bottom:15px}
-    .review blockquote{font-size:.93rem;color:#34445b;margin:0 0 23px;line-height:1.75}
-    .review-person{display:flex;align-items:center;gap:12px}
-    .avatar{display:grid;place-items:center;width:43px;height:43px;border-radius:50%;background:var(--blue-light);color:var(--blue);font-weight:900}
-    .person-name{font-size:.83rem;font-weight:900;display:block}
-    .person-label{font-size:.72rem;color:var(--muted);display:block}
-    .review-note{margin:18px 0 0;color:var(--muted);font-size:.73rem;text-align:center}
     /* Sobre */
     .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:68px;align-items:center}
     .about-image{position:relative;min-height:435px}
@@ -195,12 +188,6 @@
     .advantage{min-height:195px;padding:26px}.advantage:first-child{grid-column:span 2;min-height:230px;background:#ffffff12}
     .advantage:nth-child(2){grid-column:3;grid-row:span 2}.advantage:nth-child(3){grid-column:1;min-height:170px}.advantage:nth-child(4){grid-column:2;min-height:170px}
     .advantage h3{font-size:1.15rem}.advantage:first-child h3{font-size:1.55rem}.advantage p{line-height:1.8}
-    .testimonials{background:#f1f6fd}.review-grid{grid-template-columns:1fr 1.16fr .88fr;align-items:stretch;gap:16px}
-    .review{padding:28px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
-    .review:nth-child(2){transform:translateY(24px);background:var(--blue);color:#fff;border-color:var(--blue)}
-    .review:nth-child(2) blockquote,.review:nth-child(2) .person-label{color:#e0ecff}
-    .review:nth-child(2) .avatar{background:#ffffff1d;color:#fff}.review blockquote{font-size:.94rem;line-height:1.9}
-    .review-note{text-align:left;margin-top:42px}
     .about-grid{grid-template-columns:1fr 1fr;gap:clamp(38px,7vw,100px)}.about-image{min-height:520px}
     .about-image img{border-radius:24px}.about-copy h2{max-width:560px}.about-copy p{line-height:1.9;font-size:.97rem}
     .location{background:#eaf2fc}.location-grid{grid-template-columns:.8fr 1.2fr;gap:60px}
@@ -215,7 +202,6 @@
       .hero-grid{gap:28px}.hero-copy h1{font-size:clamp(3rem,6.5vw,4.8rem)}.hero-visual{min-height:440px}
       .service-grid{grid-template-columns:1fr 1fr}.service-card:first-child{grid-row:span 2}
       .advantage-grid{grid-template-columns:1fr 1fr}.advantage:first-child{grid-column:span 1}.advantage:nth-child(2){grid-column:2;grid-row:span 2}.advantage:nth-child(3){grid-column:1}.advantage:nth-child(4){grid-column:1}
-      .review-grid{grid-template-columns:1fr 1fr}.review:nth-child(2){transform:none}.review:last-child{grid-column:span 2;min-height:210px}
       .location-grid{gap:30px}
     }
     @media(max-width:760px){
@@ -323,7 +309,6 @@
     }
 
   </style>
-  <!-- GitHub Pages redeploy -->
 </head>
 <body>
   <header class="navbar">
@@ -354,7 +339,7 @@
           <div class="hero-note"><span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span>Escolha sua pizza e reúna todo mundo à mesa.</span></div>
         </div>
         <div class="hero-visual">
-          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=75" alt="Pizza artesanal recém-assada com queijo derretido" fetchpriority="high" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=75'"></div>
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=70" alt="Pizza artesanal recém-assada com queijo derretido" fetchpriority="high" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=75'"></div>
           <div class="floating-card top"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.8 8.7 21 9.6 16.5 14l1.1 6.2L12 17.3l-5.6 2.9L7.5 14 3 9.6l6.2-.9L12 3Z"/></svg></span><span><span class="float-title">Pizza para compartilhar</span><span class="float-sub">Escolha para dividir</span></span></div>
           <div class="floating-card bottom"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span><span class="float-title">Barra da Lagoa</span><span class="float-sub">Florianópolis · SC</span></span></div>
         </div>
@@ -387,7 +372,7 @@
 
     <section class="section" id="sobre">
       <div class="container about-grid">
-        <div class="about-image"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=75" alt="Pizza preparada para ser compartilhada" loading="lazy" decoding="async"><div class="about-stamp"><strong>Fatia dos Sonhos</strong><span>Uma boa pizza reúne pessoas.</span></div></div>
+        <div class="about-image"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=700&q=68" alt="Pizza preparada para ser compartilhada" width="700" height="875" loading="lazy" decoding="async"><div class="about-stamp"><strong>Fatia dos Sonhos</strong><span>Uma boa pizza reúne pessoas.</span></div></div>
         <div class="about-copy"><h2>Conheça a Fatia dos Sonhos na Barra da Lagoa.</h2><p>Somos a Pizzaria Fatia dos Sonhos, na Barra da Lagoa, em Florianópolis. Aqui você pode conhecer nossas opções, consultar o cardápio e conversar com nossa equipe antes de fazer seu pedido.</p><p>Vai pedir para o jantar ou reunir os amigos? Chame a gente para conferir os sabores e as opções disponíveis hoje.</p>
           <div class="about-points"><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Converse com a equipe</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Consulte o cardápio</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Veja como chegar</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Peça informações pelo WhatsApp</div></div>
           <a class="btn whatsapp-link" href="#" target="_blank" rel="noopener">Consultar sabores pelo WhatsApp <span aria-hidden="true">→</span></a>
@@ -425,8 +410,7 @@
 
   <script>
     // IMPORTANTE: substitua pelo WhatsApp real da pizzaria, com código do Brasil + DDD + número.
-    // Exemplo de formato: 5548999999999 (somente números, sem +, espaços ou traços).
-    // Deixe vazio até ter o número real; os botões avisam que falta configurar.
+    // Número pendente de confirmação; os botões só serão ativados após o envio do contato correto.
     const WHATSAPP_NUMBER = "";
     const DEFAULT_MESSAGE = "Olá! Vim pelo site da Pizzaria Fatia dos Sonhos e gostaria de consultar o cardápio.";
     document.querySelectorAll(".whatsapp-link").forEach(link => {
