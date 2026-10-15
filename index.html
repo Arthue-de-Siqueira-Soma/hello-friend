@@ -169,6 +169,74 @@
     }
     @media(max-width:390px){.brand-tag{font-size:.58rem}.hero-actions .btn{width:100%}.advantage-grid{grid-template-columns:1fr}.about-points{grid-template-columns:1fr}.floating-card{padding:12px}.float-title{font-size:.74rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+    /* Direção de arte: composição editorial, hierarquia tipográfica e ritmo */
+    :root{--blue:#124b91;--blue-dark:#0b2a52;--blue-light:#edf4fc;--ink:#10223b;--muted:#52657e;--line:#dce6f2;--shadow:0 24px 70px rgba(11,42,82,.15);--radius:24px}
+    body{font-size:15px} h1,h2,h3{letter-spacing:-.055em} h1,h2,h3{font-weight:900}
+    h2{font-size:clamp(2.35rem,4.7vw,3.8rem);line-height:1.02}
+    .section-intro{font-size:1rem;line-height:1.85;max-width:600px}
+    .hero{padding:154px 0 96px;background:linear-gradient(115deg,#f7faff 0%,#fff 58%,#e7f0fc 100%)}
+    .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,92px)}
+    .hero-copy{padding:14px 0 22px}.hero-copy h1{font-size:clamp(3.4rem,6.8vw,6.3rem);line-height:.98;max-width:690px;margin:0 0 27px}
+    .hero-copy h1 span{display:block;color:var(--blue)}.hero-copy>p{font-size:1.08rem;line-height:1.85;max-width:500px}
+    .hero-visual{min-height:560px}.hero-photo{inset:0 0 18px 30px;border-radius:46% 46% 24px 24px}.hero-photo img{transform:scale(1.04)}
+    .floating-card{border-radius:16px}.floating-card.top{left:-18px;top:56px}.floating-card.bottom{right:-20px;bottom:4px}
+    .section{padding:108px 0}.section-heading{text-align:left;max-width:780px;margin-bottom:44px}
+    .section-heading .section-intro{margin-left:0;margin-right:0}
+    .service-grid{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:auto auto;gap:18px;align-items:stretch}
+    .service-card{min-height:210px;padding:30px 32px;display:flex;flex-direction:column;align-items:flex-start}
+    .service-card:first-child{grid-row:span 2;min-height:100%;padding:38px;background:linear-gradient(145deg,#f0f6ff,#fff);border-color:#d7e5f7}
+    .service-card:first-child .service-icon{width:70px;height:70px}.service-card:first-child h3{font-size:clamp(1.6rem,2.7vw,2.25rem);max-width:300px}
+    .service-card:not(:first-child) .service-icon{width:46px;height:46px;border-radius:14px;margin-bottom:15px}
+    .service-card:not(:first-child) .service-icon svg{width:23px;height:23px}
+    .service-card h3{font-size:1.35rem}.service-card p{font-size:.91rem;line-height:1.8}
+    .advantages{background:var(--blue-dark)}.advantages h2{max-width:650px}
+    .advantage-grid{grid-template-columns:1.25fr .75fr 1fr;grid-template-rows:auto auto;gap:14px}
+    .advantage{min-height:195px;padding:26px}.advantage:first-child{grid-column:span 2;min-height:230px;background:#ffffff12}
+    .advantage:nth-child(2){grid-column:3;grid-row:span 2}.advantage:nth-child(3){grid-column:1;min-height:170px}.advantage:nth-child(4){grid-column:2;min-height:170px}
+    .advantage h3{font-size:1.15rem}.advantage:first-child h3{font-size:1.55rem}.advantage p{line-height:1.8}
+    .testimonials{background:#f1f6fd}.review-grid{grid-template-columns:1fr 1.16fr .88fr;align-items:stretch;gap:16px}
+    .review{padding:28px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
+    .review:nth-child(2){transform:translateY(24px);background:var(--blue);color:#fff;border-color:var(--blue)}
+    .review:nth-child(2) blockquote,.review:nth-child(2) .person-label{color:#e0ecff}
+    .review:nth-child(2) .avatar{background:#ffffff1d;color:#fff}.review blockquote{font-size:.94rem;line-height:1.9}
+    .review-note{text-align:left;margin-top:42px}
+    .about-grid{grid-template-columns:1fr 1fr;gap:clamp(38px,7vw,100px)}.about-image{min-height:520px}
+    .about-image img{border-radius:24px}.about-copy h2{max-width:560px}.about-copy p{line-height:1.9;font-size:.97rem}
+    .location{background:#eaf2fc}.location-grid{grid-template-columns:.8fr 1.2fr;gap:60px}
+    .location-info h2{font-size:clamp(2.3rem,4vw,3.3rem)}.map-card{min-height:460px;border:8px solid #fff}
+    .map-card iframe{min-height:444px}.final-cta{padding:90px 0;background:#fff}
+    .cta-panel{padding:58px 56px;border-radius:28px;background:linear-gradient(120deg,#124b91,#0b2a52)}
+    .cta-copy h2{font-size:clamp(2.25rem,4vw,3.4rem);max-width:600px}.cta-copy p{font-size:1rem;line-height:1.8}
+    footer{background:#071d39}.whatsapp-float{width:64px;height:64px}
+    .reveal-image{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
+    .reveal-image.is-visible{opacity:1;transform:translateY(0) scale(1)}
+    @media(max-width:950px){
+      .hero-grid{gap:28px}.hero-copy h1{font-size:clamp(3rem,6.5vw,4.8rem)}.hero-visual{min-height:440px}
+      .service-grid{grid-template-columns:1fr 1fr}.service-card:first-child{grid-row:span 2}
+      .advantage-grid{grid-template-columns:1fr 1fr}.advantage:first-child{grid-column:span 1}.advantage:nth-child(2){grid-column:2;grid-row:span 2}.advantage:nth-child(3){grid-column:1}.advantage:nth-child(4){grid-column:1}
+      .review-grid{grid-template-columns:1fr 1fr}.review:nth-child(2){transform:none}.review:last-child{grid-column:span 2;min-height:210px}
+      .location-grid{gap:30px}
+    }
+    @media(max-width:760px){
+      .section{padding:74px 0}.hero{padding:112px 0 62px}
+      .hero-grid{grid-template-columns:1fr;gap:28px}.hero-copy{padding:10px 0 0}.hero-copy h1{font-size:clamp(3.15rem,13vw,4.5rem);max-width:560px}
+      .hero-copy>p{font-size:1rem}.hero-visual{min-height:410px;margin:0 8px 0 0}.hero-photo{inset:0 10px 18px 16px}
+      .floating-card.top{left:-8px;top:20px}.floating-card.bottom{right:-5px;bottom:0}
+      .section-heading{margin-bottom:30px}.service-grid{grid-template-columns:1fr;grid-template-rows:auto}
+      .service-card:first-child{grid-row:auto;min-height:250px;padding:30px}.service-card{min-height:auto}
+      .advantage-grid{grid-template-columns:1fr 1fr}.advantage:first-child{grid-column:span 2;min-height:180px}
+      .advantage:nth-child(2){grid-column:span 2;grid-row:auto}.advantage:nth-child(3),.advantage:nth-child(4){grid-column:auto;min-height:185px}
+      .review-grid{grid-template-columns:1fr}.review,.review:last-child{grid-column:auto;min-height:220px}.review:nth-child(2){transform:none}.review-note{margin-top:22px}
+      .about-grid,.location-grid{grid-template-columns:1fr;gap:34px}.about-image{min-height:360px;margin-right:10px}
+      .map-card,.map-card iframe{min-height:330px}.map-card{border-width:5px}.cta-panel{padding:35px 25px}.final-cta{padding:64px 0}
+    }
+    @media(max-width:390px){
+      .hero-copy h1{font-size:3rem}.hero-visual{min-height:340px}.advantage-grid{grid-template-columns:1fr}
+      .advantage:first-child,.advantage:nth-child(2),.advantage:nth-child(3),.advantage:nth-child(4){grid-column:1;grid-row:auto;min-height:150px}
+    }
+    @media(prefers-reduced-motion:reduce){.reveal-image{opacity:1;transform:none;transition:none}}
+
   </style>
 </head>
 <body>
@@ -176,7 +244,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="Fatia dos Sonhos, início">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="m4 4 16 0"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/><path d="M8 13 10 16"/></svg></span>
-        <span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria · Barra da Lagoa</span></span>
+        <span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria | Barra da Lagoa</span></span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
@@ -190,7 +258,7 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Seu próximo sabor favorito</span>
+          
           <h1>Tem dias que pedem uma <span>fatia dos sonhos.</span></h1>
           <p>Reúna quem você gosta, escolha sua pizza favorita e transforme qualquer momento em uma boa lembrança. Estamos na Barra da Lagoa, em Florianópolis.</p>
           <div class="hero-actions">
@@ -209,7 +277,7 @@
 
     <section class="section services" id="servicos">
       <div class="container">
-        <div class="section-heading"><span class="eyebrow">Escolha seu momento</span><h2>Uma pizza para cada vontade</h2><p class="section-intro">O começo do seu pedido está aqui. Fale com a nossa equipe pelo WhatsApp para consultar o cardápio completo, sabores disponíveis e valores atualizados.</p></div>
+        <div class="section-heading"><h2>Uma pizza para cada vontade</h2><p class="section-intro">O começo do seu pedido está aqui. Fale com a nossa equipe pelo WhatsApp para consultar o cardápio completo, sabores disponíveis e valores atualizados.</p></div>
         <div class="service-grid">
           <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="M4 4h16"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/></svg></div><h3>Clássicas que conquistam</h3><p>Sabores queridos que combinam com qualquer ocasião. Consulte as opções disponíveis no nosso cardápio.</p></article>
           <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Combinações especiais</h3><p>Para quem gosta de experimentar e encontrar um novo sabor favorito a cada pedido.</p></article>
@@ -221,7 +289,7 @@
 
     <section class="section advantages" id="diferenciais">
       <div class="container">
-        <span class="eyebrow">Por que escolher a gente</span><h2>Mais sabor para seus momentos.</h2><p class="section-intro">A experiência começa com uma escolha fácil e continua na hora de compartilhar. Veja o que você pode esperar da Fatia dos Sonhos.</p>
+        <h2>Mais sabor para seus momentos.</h2><p class="section-intro">A experiência começa com uma escolha fácil e continua na hora de compartilhar. Veja o que você pode esperar da Fatia dos Sonhos.</p>
         <div class="advantage-grid">
           <article class="advantage"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.8 8.7 21 9.6 16.5 14l1.1 6.2L12 17.3l-5.6 2.9L7.5 14 3 9.6l6.2-.9L12 3Z"/></svg></div><h3>Sabor em primeiro lugar</h3><p>Uma boa pizza é o centro de qualquer encontro especial.</p></article>
           <article class="advantage"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg></div><h3>Pedido sem complicação</h3><p>Entre em contato pelo WhatsApp e tire suas dúvidas direto com a equipe.</p></article>
@@ -233,7 +301,7 @@
 
     <section class="section testimonials" id="depoimentos">
       <div class="container">
-        <div class="section-heading"><span class="eyebrow">Quem prova, compartilha</span><h2>Seu próximo momento favorito</h2><p class="section-intro">A melhor parte de uma pizza é a lembrança que fica depois. Queremos fazer parte dos seus bons momentos.</p></div>
+        <div class="section-heading"><h2>Seu próximo momento favorito</h2><p class="section-intro">A melhor parte de uma pizza é a lembrança que fica depois. Queremos fazer parte dos seus bons momentos.</p></div>
         <div class="review-grid">
           <article class="review"><div class="stars" aria-label="5 estrelas">★★★★★</div><blockquote>“A pizza perfeita para dividir com a família e colocar o papo em dia.”</blockquote><div class="review-person"><span class="avatar">F</span><span><span class="person-name">Família e amigos</span><span class="person-label">Momentos à mesa</span></span></div></article>
           <article class="review"><div class="stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Quando bate a vontade de pizza, o que importa é encontrar seu sabor preferido.”</blockquote><div class="review-person"><span class="avatar">P</span><span><span class="person-name">Amantes de pizza</span><span class="person-label">Uma fatia de cada vez</span></span></div></article>
@@ -246,7 +314,7 @@
     <section class="section" id="sobre">
       <div class="container about-grid">
         <div class="about-image"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1000&q=85" alt="Pizza preparada para ser compartilhada" loading="lazy"><div class="about-stamp"><strong>Fatia dos Sonhos</strong><span>Uma boa pizza reúne pessoas.</span></div></div>
-        <div class="about-copy"><span class="eyebrow">Sobre a pizzaria</span><h2>O sabor que combina com estar junto.</h2><p>A Pizzaria Fatia dos Sonhos fica na Barra da Lagoa, em Florianópolis. Criamos este espaço para você conhecer a casa, consultar as opções do cardápio e entrar em contato de um jeito simples.</p><p>Seja para dividir uma pizza com amigos ou deixar o jantar mais gostoso, fale com a nossa equipe e descubra as opções disponíveis para o seu momento.</p>
+        <div class="about-copy"><h2>O sabor que combina com estar junto.</h2><p>A Pizzaria Fatia dos Sonhos fica na Barra da Lagoa, em Florianópolis. Criamos este espaço para você conhecer a casa, consultar as opções do cardápio e entrar em contato de um jeito simples.</p><p>Seja para dividir uma pizza com amigos ou deixar o jantar mais gostoso, fale com a nossa equipe e descubra as opções disponíveis para o seu momento.</p>
           <div class="about-points"><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Atendimento direto</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Cardápio para consultar</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Localização fácil</div><div class="about-point"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 4 4L19 6"/></svg></span>Pedido pelo WhatsApp</div></div>
           <a class="btn whatsapp-link" href="#" target="_blank" rel="noopener">Falar com a pizzaria <span aria-hidden="true">→</span></a>
         </div>
@@ -255,8 +323,8 @@
 
     <section class="section location" id="localizacao">
       <div class="container location-grid">
-        <div class="location-info"><span class="eyebrow">Encontre a gente</span><h2>Estamos pertinho de você.</h2><p class="section-intro">Venha conhecer a Pizzaria Fatia dos Sonhos na Barra da Lagoa ou entre em contato para confirmar as opções de atendimento.</p>
-          <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>Endereço</h3><p>R. Altamiro Barcelos Dutra, 1573<br>Barra da Lagoa, Florianópolis - SC<br>88061-308</p><a href="https://www.google.com/maps/search/?api=1&query=R.+Altamiro+Barcelos+Dutra%2C+1573%2C+Barra+da+Lagoa%2C+Florian%C3%B3polis+-+SC%2C+88061-308" target="_blank" rel="noopener" style="display:inline-block;color:var(--blue);font-size:.8rem;font-weight:900;margin-top:7px">Abrir no Google Maps ↗</a></div></div>
+        <div class="location-info"><h2>Estamos pertinho de você.</h2><p class="section-intro">Venha conhecer a Pizzaria Fatia dos Sonhos na Barra da Lagoa ou entre em contato para confirmar as opções de atendimento.</p>
+          <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>Endereço</h3><p>R. Altamiro Barcelos Dutra, 1573<br>Barra da Lagoa, Florianópolis, SC<br>88061-308</p><a href="https://www.google.com/maps/search/?api=1&query=R.+Altamiro+Barcelos+Dutra%2C+1573%2C+Barra+da+Lagoa%2C+Florian%C3%B3polis+-+SC%2C+88061-308" target="_blank" rel="noopener" style="display:inline-block;color:var(--blue);font-size:.8rem;font-weight:900;margin-top:7px">Abrir no Google Maps ↗</a></div></div>
           <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>Horário de funcionamento</h3><p>Consulte os dias e horários atualizados diretamente pelo WhatsApp.</p></div></div>
           <div class="info-row"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.9L7.7 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.9-.6l2.8.5a2 2 0 0 1 1.7 2.6Z"/></svg></div><div><h3>Contato</h3><p>Chame a equipe para consultar o cardápio e fazer seu pedido.</p></div></div>
         </div>
@@ -272,7 +340,7 @@
   <footer>
     <div class="container">
       <div class="footer-main">
-        <div><a class="brand" href="#inicio"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="m4 4 16 0"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/></svg></span><span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria · Barra da Lagoa</span></span></a><p class="footer-description">Uma fatia gostosa, boa companhia e momentos que ficam na memória.</p></div>
+        <div><a class="brand" href="#inicio"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c5.5-2 11.5-2 16 0l-8 17L4 4Z"/><path d="m4 4 16 0"/><circle cx="10" cy="8" r="1.2"/><circle cx="14" cy="12" r="1.2"/></svg></span><span><span class="brand-name">Fatia dos Sonhos</span><span class="brand-tag">Pizzaria | Barra da Lagoa</span></span></a><p class="footer-description">Uma fatia gostosa, boa companhia e momentos que ficam na memória.</p></div>
         <nav class="footer-links" aria-label="Links do rodapé"><a href="#servicos">Cardápio</a><a href="#diferenciais">Diferenciais</a><a href="#sobre">Sobre</a><a href="#localizacao">Como chegar</a><a class="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp</a></nav>
       </div>
       <div class="footer-bottom"><span>© <span id="year"></span> Pizzaria Fatia dos Sonhos. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a></div>
@@ -299,6 +367,21 @@
       }
     });
     document.getElementById("year").textContent = new Date().getFullYear();
+    const imagesToReveal = document.querySelectorAll(".hero-photo img, .about-image img, .map-card");
+    imagesToReveal.forEach(image => image.classList.add("reveal-image"));
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            imageObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      imagesToReveal.forEach(image => imageObserver.observe(image));
+    } else {
+      imagesToReveal.forEach(image => image.classList.add("is-visible"));
+    }
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
     menuToggle.addEventListener("click", () => {
