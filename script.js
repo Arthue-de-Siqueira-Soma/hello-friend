@@ -62,3 +62,5 @@
       footerObserver.observe(footer);
     }
   
+// Horarios oficiais editaveis: preencha os dias somente apos confirmacao da pizzaria.
+const BUSINESS_HOURS = { sunday: [], monday: [], tuesday: [], wednesday: [], thursday: [], friday: [], saturday: [] };
