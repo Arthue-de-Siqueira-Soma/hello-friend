@@ -10,7 +10,7 @@
         link.href = "#";
         link.addEventListener("click", event => {
           event.preventDefault();
-          alert("O WhatsApp da pizzaria ainda precisa ser configurado no arquivo index.html.");
+          alert("O WhatsApp da pizzaria ainda precisa ser configurado no arquivo script.js.");
         });
       }
     });
