@@ -64,3 +64,16 @@
   
 // Horarios oficiais editaveis: preencha os dias somente apos confirmacao da pizzaria.
 const BUSINESS_HOURS = { sunday: [], monday: [], tuesday: [], wednesday: [], thursday: [], friday: [], saturday: [] };
+
+function updateBusinessHours(){
+ const status=document.getElementById("hoursStatus"),summary=document.getElementById("homeHoursSummary");
+ const configured=Object.values(BUSINESS_HOURS).some(list=>list.length);
+ if(!configured){if(status)status.textContent="Horários ainda não cadastrados. Confirme com a equipe.";if(summary)summary.textContent="Confirme o atendimento com a pizzaria";return;}
+ const now=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Sao_Paulo"}));
+ const day=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"][now.getDay()];
+ const minute=now.getHours()*60+now.getMinutes();
+ const open=(BUSINESS_HOURS[day]||[]).some(x=>{const a=x.open.split(":").map(Number),b=x.close.split(":").map(Number);return minute>=a[0]*60+a[1]&&minute<b[0]*60+b[1];});
+ const msg=open?"Aberta agora, conforme os horários cadastrados.":"Fechada agora, conforme os horários cadastrados.";
+ if(status)status.textContent=msg;if(summary)summary.textContent=open?"Aberta agora":"Fechada agora";
+}
+updateBusinessHours();
