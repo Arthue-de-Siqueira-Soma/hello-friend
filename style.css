@@ -349,3 +349,5 @@
 .navbar .brand-tag{font-weight:700;letter-spacing:.07em}
 .home-hero .btn:not(.btn-outline){background:#f5c451;color:#171717;border:1px solid #f5c451;font-weight:900}
 .home-hero .btn:not(.btn-outline):hover{background:#ffda78;transform:translateY(-2px)}
+
+.trust-strip{background:#0a1b2d;color:#fff;padding:20px 0}.trust-strip-inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.trust-item{display:flex;flex-direction:column;gap:5px;padding:5px 18px;border-left:2px solid #f5c451}.trust-item strong{font-size:.94rem;color:#fff}.trust-item small{font-size:.8rem;line-height:1.5;color:#cbd5e1}.featured-section{padding:76px 0;background:#f7f8fa}.featured-section .section-heading{max-width:700px;margin:0 auto 30px;text-align:center}.eyebrow{display:block;margin-bottom:10px;color:#9b6a08;font-size:.76rem;font-weight:900;letter-spacing:.15em}
