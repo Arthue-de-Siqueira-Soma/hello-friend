@@ -559,3 +559,6 @@ footer .brand-name{color:#f7f1e4}
  .brand-name{font-size:.81rem}
  .brand-tag{letter-spacing:.08em;font-size:.5rem}
 }
+
+/* Na página inicial, manter a foto da pizza sem os grafismos de ondas e círculo vermelho. */
+.home-hero:before{display:none!important;content:none!important}
